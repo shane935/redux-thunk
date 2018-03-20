@@ -2,23 +2,19 @@
   "name": "redux-thunk",
   "version": "2.2.0",
   "description": "Thunk middleware for Redux.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "typings": "./index.d.ts",
-  "files": [
-    "lib",
-    "es",
-    "src",
-    "dist",
-    "index.d.ts"
-  ],
+  "files": ["lib", "es", "src", "dist", "index.d.ts"],
   "scripts": {
     "clean": "rimraf lib dist es",
-    "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min && npm run build:es",
+    "build":
+      "npm run build:commonjs && npm run build:umd && npm run build:umd:min && npm run build:es",
     "prepublish": "npm run clean && npm run test && npm run build",
     "posttest": "npm run lint",
     "lint": "eslint src test",
-    "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register --reporter spec test/*.js",
+    "test":
+      "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register --reporter spec test/*.js",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack",
@@ -29,13 +25,7 @@
     "url": "https://github.com/gaearon/redux-thunk.git"
   },
   "homepage": "https://github.com/gaearon/redux-thunk",
-  "keywords": [
-    "redux",
-    "thunk",
-    "middleware",
-    "redux-middleware",
-    "flux"
-  ],
+  "keywords": ["redux", "thunk", "middleware", "redux-middleware", "flux"],
   "author": "Dan Abramov <dan.abramov@me.com>",
   "license": "MIT",
   "devDependencies": {
